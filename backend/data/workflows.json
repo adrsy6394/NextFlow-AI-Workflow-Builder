@@ -1,0 +1,111 @@
+[
+  {
+    "userId": "user_3BQ9UPz836c46gKYOhe6R7ikC2S",
+    "nodes": [
+      {
+        "id": "node_1774424645397",
+        "type": "text",
+        "position": {
+          "x": -566.9760775291113,
+          "y": -189.21611427444577
+        },
+        "data": {
+          "label": "Text Node",
+          "value": "act as a web developer"
+        },
+        "width": 240,
+        "height": 180,
+        "selected": false,
+        "positionAbsolute": {
+          "x": -566.9760775291113,
+          "y": -189.21611427444577
+        },
+        "dragging": false
+      },
+      {
+        "id": "node_1774424664759",
+        "type": "text",
+        "position": {
+          "x": -563.2302304346556,
+          "y": 72.13156285584162
+        },
+        "data": {
+          "label": "Text Node",
+          "value": "what is javascript"
+        },
+        "width": 240,
+        "height": 180,
+        "selected": false,
+        "positionAbsolute": {
+          "x": -563.2302304346556,
+          "y": 72.13156285584162
+        },
+        "dragging": false
+      },
+      {
+        "id": "node_1774424676199",
+        "type": "llm",
+        "position": {
+          "x": -80.46904344330562,
+          "y": -129.58594696439928
+        },
+        "data": {
+          "label": "Llm Node",
+          "model": "claude-3"
+        },
+        "width": 240,
+        "height": 235,
+        "selected": false,
+        "positionAbsolute": {
+          "x": -80.46904344330562,
+          "y": -129.58594696439928
+        },
+        "dragging": false
+      },
+      {
+        "id": "node_1774424725624",
+        "type": "outputNode",
+        "position": {
+          "x": 153.95880826359473,
+          "y": 242.63833656141497
+        },
+        "data": {
+          "label": "OutputNode Node",
+          "output": "JavaScript is a high-level, dynamic, and interpreted programming language. It is one of the core technologies of the World Wide Web, alongside HTML and CSS. JavaScript was originally developed in 1995 by Brendan Eich, a software engineer at Netscape Communications Corporation.\n\nHere are some key points about JavaScript:\n\n1. Client-side Scripting: JavaScript is primarily used as a client-side scripting language, which means that it is executed on the user's web browser, rather than on the server. This allows web pages to be more interactive and responsive.\n\n2. Dynamic Behavior: JavaScript is used to add dynamic behavior to web pages, such as drop-down menus, image sliders, form validations, and pop-ups.\n\n3. Web Applications: JavaScript is extensively used in the development of modern web applications, including single-page applications (SPAs), which rely heavily on JavaScript frameworks and libraries like React, Angular, and Vue.js.\n\n4. Server-side Scripting: With the introduction of Node.js, JavaScript can also be used for server-side scripting, allowing developers to use the same language for both client-side and server-side development.\n\n5. Mobile Development: JavaScript can also be used for mobile development, with the help of frameworks like React Native and NativeScript, which allow developers to build native mobile apps using JavaScript.\n\n6. Game Development: JavaScript can be used to create simple browser-based games, taking advantage of technologies like the HTML5 Canvas element and WebGL.\n\n7. Desktop Applications: With the help of frameworks like Electron, JavaScript can be used to build desktop applications that run on multiple operating systems, such as Windows, macOS, and Linux.\n\nJavaScript is a versatile language that has evolved significantly over the years, and it continues to be an essential tool in the web development ecosystem, enabling developers to create dynamic and interactive web experiences."
+        },
+        "width": 1216,
+        "height": 352,
+        "selected": true,
+        "positionAbsolute": {
+          "x": 153.95880826359473,
+          "y": 242.63833656141497
+        },
+        "dragging": false
+      }
+    ],
+    "edges": [
+      {
+        "source": "node_1774424645397",
+        "sourceHandle": null,
+        "target": "node_1774424676199",
+        "targetHandle": "system",
+        "id": "reactflow__edge-node_1774424645397-node_1774424676199system"
+      },
+      {
+        "source": "node_1774424664759",
+        "sourceHandle": null,
+        "target": "node_1774424676199",
+        "targetHandle": "user",
+        "id": "reactflow__edge-node_1774424664759-node_1774424676199user"
+      },
+      {
+        "source": "node_1774424676199",
+        "sourceHandle": null,
+        "target": "node_1774424725624",
+        "targetHandle": "input",
+        "id": "reactflow__edge-node_1774424676199-node_1774424725624input"
+      }
+    ],
+    "updatedAt": "2026-03-25T07:46:42.430Z"
+  }
+]

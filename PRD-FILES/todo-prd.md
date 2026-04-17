@@ -142,7 +142,7 @@ This document provides a step-by-step Execution Plan to build the NextFlow proje
 **Folder Structure Focus:** Root configuration files (`vercel.json`, `render.yaml`, env configurations).
 **Tasks:**
 - [ ] Deploy Frontend Application via Vercel.
-- [ ] Deploy Backend Application via Render/Railway.
+- [ ] Deploy Backend Application via Vercel.
 - [ ] Connect production Database & configure live API external tokens (OpenRouter, Cloudinary, Clerk).
 - [ ] Run End-to-End sanity test over Live URLs.
 **Git Checkpoint:** 
