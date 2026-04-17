@@ -25,6 +25,10 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'NextFlow API is running properly.' });
 });
 
+app.get('/', (req, res) => {
+  res.send('NextFlow Backend is running properly on Vercel.');
+});
+
 // Start Server
 if (require.main === module) {
   app.listen(PORT, () => {
