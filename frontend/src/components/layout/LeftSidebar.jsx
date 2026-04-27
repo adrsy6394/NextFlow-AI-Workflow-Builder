@@ -1,10 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Type, BrainCircuit, Image as ImageIcon, Video, ChevronLeft, ChevronRight, TerminalSquare, FileText } from 'lucide-react';
 import useWorkflowStore from '../../store/workflowStore';
 
 export default function LeftSidebar() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(window.innerWidth > 768);
   const addNode = useWorkflowStore((state) => state.addNode);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setIsOpen(false);
+      } else {
+        setIsOpen(true);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const onDragStart = (event, nodeType) => {
     event.dataTransfer.setData('application/reactflow', nodeType);
@@ -22,8 +34,8 @@ export default function LeftSidebar() {
   };
 
   return (
-    <aside className={`${isOpen ? 'w-[260px]' : 'w-[60px]'} bg-gray-900 border-r border-gray-800 flex flex-col h-full shadow-sm z-10 shrink-0 transition-all duration-300 relative overflow-hidden`}>
-      <div className={`p-4 border-b border-gray-800 flex items-center ${isOpen ? 'justify-between' : 'justify-center'}`}>
+    <aside className={`${isOpen ? 'w-[260px] max-w-[85vw]' : 'w-[48px] md:w-[60px]'} absolute md:relative left-0 top-0 bg-gray-900 border-r border-gray-800 flex flex-col h-full shadow-sm z-20 shrink-0 transition-all duration-300 overflow-hidden`}>
+      <div className={`p-2 md:p-4 border-b border-gray-800 flex items-center ${isOpen ? 'justify-between' : 'justify-center'}`}>
         {isOpen && <h2 className="text-lg font-semibold text-gray-100 whitespace-nowrap">Node Library</h2>}
         <button 
           onClick={() => setIsOpen(!isOpen)} 

@@ -9,7 +9,19 @@ export default function RightSidebar() {
   const [jobId, setJobId] = useState(null);
   const [jobState, setJobState] = useState(null);
   const [isPolling, setIsPolling] = useState(false);
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(window.innerWidth > 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setIsOpen(false);
+      } else {
+        setIsOpen(true);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleRun = async () => {
     try {
@@ -75,8 +87,8 @@ export default function RightSidebar() {
   }, [isPolling, jobId]);
 
   return (
-    <aside className={`${isOpen ? 'w-[300px]' : 'w-[60px]'} bg-gray-900 border-l border-gray-800 flex flex-col h-full shadow-sm z-10 shrink-0 transition-all duration-300 relative overflow-hidden`}>
-      <div className={`p-4 border-b border-gray-800 flex items-center ${isOpen ? 'justify-between' : 'justify-center'} bg-gray-800`}>
+    <aside className={`${isOpen ? 'w-[300px] max-w-[85vw]' : 'w-[48px] md:w-[60px]'} absolute md:relative right-0 top-0 bg-gray-900 border-l border-gray-800 flex flex-col h-full shadow-sm z-20 shrink-0 transition-all duration-300 overflow-hidden`}>
+      <div className={`p-2 md:p-4 border-b border-gray-800 flex items-center ${isOpen ? 'justify-between' : 'justify-center'} bg-gray-800`}>
         <button 
           onClick={() => setIsOpen(!isOpen)} 
           className={`p-1 hover:bg-gray-700 rounded-md transition-colors ${isOpen ? 'mr-0' : 'mr-0'}`}
